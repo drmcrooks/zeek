@@ -10,7 +10,7 @@ all:
 		--build-arg ZEEK_VERSION=$(VERSION) \
 		--build-arg GIT_COMMIT=$$(git -C .. rev-parse HEAD) \
 		--build-arg CREATED_DATE=$$(date -Iseconds) \
-		-t $(ZEEK_IMAGE) \
+		-t zeek-udp \
 		-f Dockerfile ..
 	docker tag $(ZEEK_IMAGE) zeek:latest
 
