@@ -34,6 +34,8 @@ RUN apt-get -q update \
      swig \
      ninja-build \
      python3-pip \
+     liburing2 \
+     liburing-dev \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -85,7 +87,9 @@ RUN apt-get -q update \
      python3-semantic-version \
      python3-websocket \
      python3-websockets \
- && apt-get clean \
+     liburing2 \
+     liburing-dev \
+&& apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /usr/local/zeek /usr/local/zeek
